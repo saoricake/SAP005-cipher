@@ -16,6 +16,6 @@ const cipher = {
 		}
 		return String.fromCodePoint(outputCodePoint)
 	},
-};
+}
 
 export default cipher;
