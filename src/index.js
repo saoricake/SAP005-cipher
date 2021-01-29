@@ -1,12 +1,14 @@
 import cipher from './cipher.js';
 
-let textAreas = {
-	dcodedTxt: document.querySelector("#dcodedTxt"),
-	ncodedTxt: document.querySelector("#ncodedTxt"),
-}
+let dcodedTxt = document.querySelector("#dcodedTxt");
+let ncodedTxt = document.querySelector("#ncodedTxt");
 let offsetNum = document.querySelector("#offsetNum");
 let encodeBtn = document.querySelector("#encodeBtn");
 let decodeBtn = document.querySelector("#decodeBtn");
 
-encodeBtn.addEventListener("click", function(){cipher.encode(offsetNum, textAreas)});
-decodeBtn.addEventListener("click", function(){cipher.decode(offsetNum, textAreas)});
+encodeBtn.addEventListener("click", function(){
+	ncodedTxt.value = cipher.encode(Number(offsetNum.value), dcodedTxt.value)
+});
+decodeBtn.addEventListener("click", function(){
+	dcodedTxt.value = cipher.decode(Number(offsetNum.value), ncodedTxt.value)
+});
