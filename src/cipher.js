@@ -1,7 +1,7 @@
 const cipher = {
 	encode(offset, string) {
 		function formula(match) {
-			let outputCodePoint = match.codePointAt(0) + Number(offset.value);
+			let outputCodePoint = match.codePointAt(0) + offset;
 
 			if (
 				(/[A-Z]/.test(match) && outputCodePoint < 65) ||
@@ -18,12 +18,12 @@ const cipher = {
 			return String.fromCodePoint(outputCodePoint);
 			}
 
-		string.ncodedTxt.value = string.dcodedTxt.value.replaceAll(/[A-Z]/gi, formula);
+		return string.replace(/[A-Z]/gi, formula);
 	},
 
 	decode(offset, string) {
 		function formula(match) {
-			let outputCodePoint = match.codePointAt(0) - Number(offset.value);
+			let outputCodePoint = match.codePointAt(0) - offset;
 
 			if (
 				(/[A-Z]/.test(match) && outputCodePoint < 65) ||
@@ -40,7 +40,7 @@ const cipher = {
 			return String.fromCodePoint(outputCodePoint);
 			}
 
-		string.dcodedTxt.value = string.ncodedTxt.value.replaceAll(/[A-Z]/gi, formula);
+		return string.replaceAll(/[A-Z]/gi, formula);
 	},
 }
 
