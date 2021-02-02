@@ -24,10 +24,6 @@ textarea {
 	text-align: center;
 }
 
-#pasteBtn {
-	align-self: flex-start;
-}
-
 #inputText {
 }
 
@@ -50,8 +46,4 @@ textarea {
 }
 
 #outputTxt {
-}
-
-#copyBtn {
-	align-self: flex-end;
 }
