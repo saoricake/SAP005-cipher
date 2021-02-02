@@ -11,7 +11,7 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	margin: 1rem auto;
-	padding: 1rem;
+	padding: 1rem 2rem;
 	width: max-content;
 }
 
@@ -22,6 +22,10 @@ textarea {
 #title {
 	margin: 0 0 1rem 0;
 	text-align: center;
+}
+
+#pasteBtn {
+	align-self: flex-start;
 }
 
 #dcodedTxt {
@@ -46,4 +50,8 @@ textarea {
 }
 
 #ncodedTxt {
+}
+
+#copyBtn {
+	align-self: flex-end;
 }
