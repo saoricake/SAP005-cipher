@@ -24,7 +24,7 @@ textarea {
 	margin: 0;
 }
 
-#dcodedTxt {
+#inputText {
 	grid-area: decoded-text;
 }
 
@@ -48,6 +48,6 @@ textarea {
 	width: 64px;
 }
 
-#ncodedTxt {
+#outputTxt {
 	grid-area: encoded-text;
 }
