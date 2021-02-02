@@ -24,6 +24,6 @@ const cipher = {
 
 		return string.replace(/[A-Z]/gi, formula);
 	},
-};
+}
 
 export default cipher;

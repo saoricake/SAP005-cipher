@@ -1,18 +1,18 @@
 :root {
+	background-color: white;
 	font-family: "Trebuchet MS", Arial, sans-serif;
 }
 
 body {
-	display: grid;
-	gap: 30px;
-	grid:
-		"title"
-		"decoded-text"
-		"input-buttons"
-		"encoded-text";
+	align-items: center;
+	background-clip: padding-box;
+	background-color: aquamarine;
+	display: flex;
+	flex-direction: column;
 	justify-content: center;
-	margin: 25px;
-	place-items: center;
+	margin: 1rem auto;
+	padding: 1rem;
+	width: max-content;
 }
 
 textarea {
@@ -20,18 +20,17 @@ textarea {
 }
 
 #title {
-	grid-area: title;
-	margin: 0;
+	margin: 0 0 1rem 0;
+	text-align: center;
 }
 
 #inputText {
-	grid-area: decoded-text;
 }
 
 #inputAndButtons {
 	align-items: center;
 	display: flex;
-	grid-area: input-buttons;
+	height: 4.5rem;
 	justify-content: space-evenly;
 	width: 100%;
 }
@@ -41,13 +40,10 @@ textarea {
 }
 
 #encodeBtn {
-	width: 64px;
 }
 
 #decodeBtn {
-	width: 64px;
 }
 
 #outputTxt {
-	grid-area: encoded-text;
 }
