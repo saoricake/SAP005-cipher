@@ -6,7 +6,7 @@
 body {
 	align-items: center;
 	background-clip: padding-box;
-	background-color:aquamarine;
+	background-color: aquamarine;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -24,7 +24,7 @@ textarea {
 	text-align: center;
 }
 
-#dcodedTxt {
+#inputText {
 }
 
 #inputAndButtons {
@@ -45,5 +45,5 @@ textarea {
 #decodeBtn {
 }
 
-#ncodedTxt {
+#outputTxt {
 }
