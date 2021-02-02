@@ -5,7 +5,7 @@ const cipher = {
 			if (/[A-Z]/.test(match)) aCodePoint = 65;
 			if (/[a-z]/.test(match)) aCodePoint = 97;
 
-			let outputCodePoint = ((match.codePointAt(0) + offset - aCodePoint) % 26) + aCodePoint;
+			let outputCodePoint = ((((match.codePointAt(0) + offset - aCodePoint) % 26) + 26) % 26) + aCodePoint;
 			return String.fromCodePoint(outputCodePoint);
 		}
 
@@ -18,7 +18,7 @@ const cipher = {
 			if (/[A-Z]/.test(match)) aCodePoint = 65;
 			if (/[a-z]/.test(match)) aCodePoint = 97;
 
-			let outputCodePoint = ((((match.codePointAt(0) - offset - aCodePoint) % 26) + 26) % 26) + aCodePoint;
+			let outputCodePoint = ((((match.codePointAt(0) + offset - aCodePoint) % 26) + 26) % 26) + aCodePoint;
 			return String.fromCodePoint(outputCodePoint);
 		}
 
