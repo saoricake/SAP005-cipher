@@ -1,21 +1,20 @@
 import cipher from './cipher.js';
 
-let inputText = document.querySelector("#inputText");
-let outputTxt = document.querySelector("#outputTxt");
-let offsetNum = document.querySelector("#offsetNum");
-let encodeBtn = document.querySelector("#encodeBtn");
-let decodeBtn = document.querySelector("#decodeBtn");
+const inputText = document.querySelector("#inputText");
+const outputTxt = document.querySelector("#outputTxt");
+const offsetNum = document.querySelector("#offsetNum");
+const encodeBtn = document.querySelector("#encodeBtn");
+const decodeBtn = document.querySelector("#decodeBtn");
+const codeBttns = [encodeBtn, decodeBtn];
+const copyCbBtn = document.querySelector("#copyCbBtn");
 
+function copy() {navigator.clipboard.writeText(outputTxt.value);}
 function listener(event) {
-	if (event.target == encodeBtn) {
-		var offset = Number(offsetNum.value);
-		var func = cipher.encode;
-	} else if (event.target == decodeBtn) {
-		var offset = -Number(offsetNum.value);
-		var func = cipher.decode;
-	}
-
-	outputTxt.value = func(offset, inputText.value);
+	var offset;
+	if (event.target == encodeBtn) offset = + offsetNum.value;
+	if (event.target == decodeBtn) offset = - offsetNum.value;
+	outputTxt.value = cipher.code(offset, inputText.value);
 }
 
-[encodeBtn, decodeBtn].forEach(function(ele) {ele.addEventListener("click", listener);})
+copyCbBtn.addEventListener("click", copy);
+codeBttns.forEach(ele => ele.addEventListener("click", listener));
