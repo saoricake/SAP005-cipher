@@ -1,28 +1,23 @@
 const cipher = {
-	encode(offset, string) {
+	code(offset, string) {
 		function formula(match) {
-			let aCodePoint;
+			var aCodePoint;
 			if (/[A-Z]/.test(match)) aCodePoint = 65;
 			if (/[a-z]/.test(match)) aCodePoint = 97;
 
-			let outputCodePoint = ((((match.codePointAt(0) + offset - aCodePoint) % 26) + 26) % 26) + aCodePoint;
+			var outputCodePoint = ((((match.codePointAt(0) + offset - aCodePoint) % 26) + 26) % 26) + aCodePoint;
 			return String.fromCodePoint(outputCodePoint);
 		}
 
 		return string.replace(/[A-Z]/gi, formula);
 	},
 
+	encode(offset, string) {
+		return cipher.code(offset, string);
+	},
+
 	decode(offset, string) {
-		function formula(match) {
-			let aCodePoint;
-			if (/[A-Z]/.test(match)) aCodePoint = 65;
-			if (/[a-z]/.test(match)) aCodePoint = 97;
-
-			let outputCodePoint = ((((match.codePointAt(0) + offset - aCodePoint) % 26) + 26) % 26) + aCodePoint;
-			return String.fromCodePoint(outputCodePoint);
-		}
-
-		return string.replace(/[A-Z]/gi, formula);
+		return cipher.code(- offset, string);
 	},
 }
 
