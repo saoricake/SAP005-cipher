@@ -1,47 +1,52 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta
-		charset="utf-8">
+		<meta charset="utf-8">
 
-		<title>Spoilertagger</title>
+		<title>caesar cipher spoilertagger</title>
 
-		<link
-		rel="stylesheet"
-		href="./style.css">
-		<script
-		type="module"
-		src="./index.js"></script>
+		<link rel="stylesheet" href="./style.css">
+		<script type="module" src="./index.js"></script>
 	</head>
 	
 	<body>
 		<h1
-		id="title">caesar cipher thing</h1>
+		class="title" id="title"><a href="https://en.wikipedia.org/wiki/Caesar_cipher">caesar cipher</a> spoilertagger</h1>
 
 		<textarea
-		cols="60"
-		id="dcodedTxt"
-		rows="10"></textarea>
+		class="input-text" id="inputText"
+		cols="60" rows="10"></textarea>
 
-		<section
-		id="inputAndButtons">
+		<div
+		class="encode-btn-bg">
 			<button
-			id="encodeBtn"
+			class="encode-btn" id="encodeBtn"
 			type="button">encode</button>
+		</div>
 
+		<div
+		class="offset-num-bg">
+			<p>key</p>
 			<input
-			id="offsetNum"
-			type="number"
-			value="13">
+			class="offset-num" id="offsetNum"
+			type="number" value="13">
+		</div>
 
+		<div
+		class="decode-btn-bg">
 			<button
-			id="decodeBtn"
+			class="decode-btn" id="decodeBtn"
 			type="button">decode</button>
-		</section>
+		</div>
 
 		<textarea
-		cols="60"
-		id="ncodedTxt"
-		rows="10"></textarea>
+		class="output-txt" id="outputTxt"
+		cols="60" rows="10"
+		readonly></textarea>
+
+		<button
+		class="copycb-btn" id="copyCbBtn"
+		type="button">copy to clipboard</button>
+
 	</body>
 </html>

@@ -1,49 +1,99 @@
 :root {
-	background-color: white;
+	background-color: teal;
 	font-family: "Trebuchet MS", Arial, sans-serif;
 }
 
+:any-link {
+	color: teal;
+}
+
 body {
-	align-items: center;
 	background-clip: padding-box;
-	background-color:aquamarine;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	background-color: aquamarine;
+	display: grid;
+	grid-template: 
+		[row1-start] "title title title" [row1-end]
+		[row2-start] "input input input" [row2-end]
+		[row3-start] "ncode offst dcode" [row3-end]
+		[row4-start] "outpt outpt outpt" [row4-end]
+		[row5-start] "..... ..... cpycb" [row5-end]
+		/ 1fr 1fr 1fr;
 	margin: 1rem auto;
-	padding: 1rem;
+	padding: 1rem 2rem;
+	place-content: center;
+	place-items: center;
 	width: max-content;
 }
 
 textarea {
+	margin: 0;
 	resize: none;
 }
 
-#title {
+div {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	height: 5rem;
+	justify-content: center;
+	width: 100%;
+}
+
+button {
+	width: 64px;
+}
+
+p {
+	color: white;
+	font-size: small;
+	margin: 0;
+}
+
+.title {
+	grid-area: title;
 	margin: 0 0 1rem 0;
 	text-align: center;
 }
 
-#dcodedTxt {
+.input-text {
+	grid-area: input;
 }
 
-#inputAndButtons {
-	align-items: center;
-	display: flex;
-	height: 4.5rem;
-	justify-content: space-evenly;
-	width: 100%;
+.encode-btn {
 }
 
-#offsetNum {
+.encode-btn-bg {
+	grid-area: ncode;
+}
+
+.offset-num {
 	width: 42px;
 }
 
-#encodeBtn {
+.offset-num-bg {
+	background-image: conic-gradient(
+		at bottom,
+		teal 0deg 70deg,
+		transparent 70deg 290deg,
+		teal 290deg);
+	grid-area: offst;
+	width: 70%
 }
 
-#decodeBtn {
+.decode-btn {
 }
 
-#ncodedTxt {
+.decode-btn-bg {
+	grid-area: dcode;
+}
+
+.output-txt {
+	grid-area: outpt;
+	margin-top: 1px;
+}
+
+.copycb-btn {
+	grid-area: cpycb;
+	justify-self: end;
+	width: max-content;
 }
