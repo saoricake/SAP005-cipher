@@ -1,15 +1,15 @@
 :root {
-	background-color: teal;
-	font-family: "Trebuchet MS", Arial, sans-serif;
+	background-color: #2F2F2F;
+	font-family: "Consolas", monospace;
 }
 
 :any-link {
-	color: teal;
+	color: #00BFFF;
 }
 
 body {
 	background-clip: padding-box;
-	background-color: aquamarine;
+	background-color: #606060;
 	display: grid;
 	grid-template: 
 		[row1-start] "title title title" [row1-end]
@@ -19,7 +19,7 @@ body {
 		[row5-start] "..... ..... cpycb" [row5-end]
 		/ 1fr 1fr 1fr;
 	margin: 1rem auto;
-	padding: 1rem 2rem;
+	padding: 1rem 1.3rem;
 	place-content: center;
 	place-items: center;
 	width: max-content;
@@ -40,16 +40,17 @@ div {
 }
 
 button {
+	font-family: "Consolas", monospace;
 	width: 64px;
 }
 
 p {
-	color: white;
 	font-size: small;
 	margin: 0;
 }
 
 .title {
+	color: #FFFFFF;
 	grid-area: title;
 	margin: 0 0 1rem 0;
 	text-align: center;
@@ -73,9 +74,9 @@ p {
 .offset-num-bg {
 	background-image: conic-gradient(
 		at bottom,
-		teal 0deg 70deg,
+		lightgray 0deg 70deg,
 		transparent 70deg 290deg,
-		teal 290deg);
+		lightgray 290deg);
 	grid-area: offst;
 	width: 70%
 }
